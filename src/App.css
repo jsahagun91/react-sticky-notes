@@ -1,38 +1,80 @@
+html, body, textarea, button {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Titillium Web", Arial, sans-serif;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  min-height: 100vh; /* This ensures that the App container takes the full viewport height */
+  overflow: auto; /* Adds scroll if content overflows */
+  font-family: "Titillium Web", Arial, sans-serif;
+}
+
+.board-container {
+  max-height: 100%;;
+  overflow: auto;
+  text-align: center; /* Centers the content of board-container */
+}
+
+.add-note-container {
+  margin-bottom: 20px;
+}
+
+.add-note-container button {
+  background-color: orange;
+  border-radius: 15px;
+  outline: none;
+  border-width: 0px;
+  padding: .5em;
+  width: 6rem;
+}
+
+.notes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* This centers the notes within the notes container */
+  max-height: 100%; /* To ensure it doesn't exceed its parent's height */
+  overflow-y: auto; /* Allows vertical scrolling */
+}
+
+.sticky-note {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background-color: orange;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.sticky-note textarea {
+  background-color: orange;
+  border: none;
+  height: 96%;
+  width: 96%;
+  outline: none;
+  border: 2px solid transparent;
+  resize: none;
+}
+
+.delete-note {
+  padding: 5px; /* Adjust if needed */
+  font-size: .75em; /* Adjust based on your preference */
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border: none;
+  border-radius: 50%;
+  background: none;
+  width: 2%;
+  height: 2%;
+  cursor: pointer;
 }
